@@ -98,4 +98,20 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    /**
+     * 停止通知监听
+     * @param view
+     */
+    public void stopNotification(View view) {
+        JPushInterface.stopPush(getApplicationContext());
+    }
+
+    /**
+     * 启动通知监听
+     * @param view
+     */
+    public void startNotification(View view) {
+        JPushInterface.resumePush(getApplicationContext());
+    }
 }

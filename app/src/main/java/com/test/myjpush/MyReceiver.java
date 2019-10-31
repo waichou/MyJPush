@@ -37,6 +37,9 @@ public class MyReceiver extends BroadcastReceiver {
 
 			} else if (JPushInterface.ACTION_MESSAGE_RECEIVED.equals(intent.getAction())) {
 				Logger.d(TAG, "[MyReceiver] 接收到推送下来的自定义消息: " + bundle.getString(JPushInterface.EXTRA_MESSAGE));
+
+				String fileHtml = bundle.getString(JPushInterface.EXTRA_EXTRA);//可以通过这个字段来接收JSON数据处理对应的业务逻辑！
+				System.out.println("custom message="+ fileHtml);
 				processCustomMessage(context, bundle);
 
 			} else if (JPushInterface.ACTION_NOTIFICATION_RECEIVED.equals(intent.getAction())) {
@@ -44,8 +47,8 @@ public class MyReceiver extends BroadcastReceiver {
 				int notifactionId = bundle.getInt(JPushInterface.EXTRA_NOTIFICATION_ID);
 				Logger.d(TAG, "[MyReceiver] 接收到推送下来的通知的ID: " + notifactionId);
 
-				String fileHtml = bundle.getString(JPushInterface.EXTRA_EXTRA);
-				System.out.println("html="+ fileHtml);
+				String fileHtml = bundle.getString(JPushInterface.EXTRA_EXTRA);//可以通过这个字段来接收JSON数据处理对应的业务逻辑！
+				System.out.println("notification="+ fileHtml);
 
 			} else if (JPushInterface.ACTION_NOTIFICATION_OPENED.equals(intent.getAction())) {
 				Logger.d(TAG, "[MyReceiver] 用户点击打开了通知");
@@ -109,7 +112,7 @@ public class MyReceiver extends BroadcastReceiver {
 	/**
 	 * key:cn.jpush.android.ALERT, value:77777778
 	 * key:cn.jpush.android.NOTIFICATION_ID, value:532022137
-	 * key:cn.jpush.android.ALERT_TYPE, value:7
+	 * key:cn.jpush.android.ALERT_TYPE, value:7    --->>> 1 表示提示音 3 表示提示音+震动  7 表示提示音+震动+指示灯
 	 * key:cn.jpush.android.NOTIFICATION_CONTENT_TITLE, value:666
 	 * key:cn.jpush.android.MSG_ID, value:58546825195240350
 	 */
