@@ -17,7 +17,7 @@ public class MyApplication extends Application {
 
         JPushInterface.setDebugMode(true); 	// 设置开启日志,发布时请关闭日志
         JPushInterface.setPowerSaveMode(this,true);
-        JPushInterface.init(this);//
+        JPushInterface.init(this);//2222
 
 
     }
