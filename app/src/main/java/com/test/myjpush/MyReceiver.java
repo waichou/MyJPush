@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -36,11 +37,19 @@ public class MyReceiver extends BroadcastReceiver {
 				//send the Registration Id to your server...
 
 			} else if (JPushInterface.ACTION_MESSAGE_RECEIVED.equals(intent.getAction())) {
-				Logger.d(TAG, "[MyReceiver] 接收到推送下来的自定义消息: " + bundle.getString(JPushInterface.EXTRA_MESSAGE));
 
-				String fileHtml = bundle.getString(JPushInterface.EXTRA_EXTRA);//可以通过这个字段来接收JSON数据处理对应的业务逻辑！
-				System.out.println("custom message="+ fileHtml);
-				processCustomMessage(context, bundle);
+				String message = bundle.getString(JPushInterface.EXTRA_MESSAGE);
+				System.out.println("zw-----received msg--->>" + message);
+				Toast.makeText(context, "msg="+ message, Toast.LENGTH_SHORT).show();
+
+//				Logger.d(TAG, "[MyReceiver] 接收到推送下来的自定义消息: " + bundle.getString(JPushInterface.EXTRA_MESSAGE));
+
+//				String fileHtml = bundle.getString(JPushInterface.EXTRA_EXTRA);//可以通过这个字段来接收JSON数据处理对应的业务逻辑！
+//				System.out.println("custom message="+ fileHtml);
+//
+//				Toast.makeText(context, "msg=" + fileHtml, Toast.LENGTH_SHORT).show();
+
+//				processCustomMessage(context, bundle);
 
 			} else if (JPushInterface.ACTION_NOTIFICATION_RECEIVED.equals(intent.getAction())) {
 				Logger.d(TAG, "[MyReceiver] 接收到推送下来的通知");

@@ -37,7 +37,7 @@
             <intent-filter>
                 <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
 
-                <category android:name="com.test.jpush" />
+                <category android:name="${applicationId}" />
             </intent-filter>
         </receiver>
 
