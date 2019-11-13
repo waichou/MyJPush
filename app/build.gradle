@@ -4,7 +4,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.1"
     defaultConfig {
-        applicationId "in.trustrock.ucash"
+        applicationId "in.trustrock.ucash.test"
         minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
@@ -17,7 +17,7 @@ android {
 
         manifestPlaceholders = [
                 JPUSH_PKGNAME: applicationId,
-                JPUSH_APPKEY : "e220752d302ae13a5fc39e0a", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_APPKEY : "16339ea0245197d22a8e1126", //JPush 上注册的包名对应的 Appkey.
                 JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
         ]
 
