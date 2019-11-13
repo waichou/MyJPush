@@ -115,7 +115,7 @@ public class MyReceiver extends BroadcastReceiver {
 				sb.append("\nkey:" + key + ", value:" + bundle.get(key));
 			}
 		}
-		return sb.toString();
+		return sb.toString();//222试2222
 	}
 
 	/**
